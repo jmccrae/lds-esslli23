@@ -36,7 +36,7 @@ html(lang="en")
           ul
             li We will use Python
             li Very simple examples, no previous knowledge required
-            li Switch between examples and slides
+            li You will need your laptop to follow along!
         section(data-background-image="https://john.mccr.ae/me.jpg" data-background-opacity=0.5)
           h2 About me
           ul
@@ -45,6 +45,10 @@ html(lang="en")
             li More at 
               a(href="https://john.mccr.ae")
                 = 'https://john.mccr.ae'
+        section
+          h2 About you
+          a(href='https://www.menti.com/alddspo43ixx') 
+            = 'Go to https://www.menti.com/alddspo43ixx'
         section
           h1 What is Data Science?
         section(data-background-color="white")
@@ -115,33 +119,237 @@ html(lang="en")
             More flexibility but can be very slow to query
         section
           h1 Scaling Tools
-        section(data-auto-animate)
+        section(data-auto-animate data-background-image="img/Hadoop_logo_new.svg" data-background-opacity=0.3)
           h2 Apache Hadoop
           p Based on MapReduce
-          div(data-id=box style="background:cornflowerblue;width:30%;border-radius:25px;") Data
+          div(data-id="box" style="background:cornflowerblue;width:30%;border-radius:25px;margin: 0 auto") Word List
         section(data-auto-animate)
-          h2 Apache Hadoop
-          p Map
-          div(data-id=box style="background:cornflowerblue;width:30%;border-radius:25px;") Data 1
+          h2 Map-Reduce
+          p(data-id="title") Splitting
+          div(data-id="box" style="background:cornflowerblue;width:30%;border-radius:25px;margin: 0 auto") aardvark
           p ...
-          div(data-id=box style="background:cornflowerblue;width:30%;border-radius:25px;") Data N
+          div(data-id="box2" style="background:cornflowerblue;width:30%;border-radius:25px;margin: 0 auto") zebra
+        section(data-auto-animate)
+          h2 Map-Reduce
+          p(data-id=title) Mapping (word length)
+          div(data-id="box" style="background:coral;width:30%;border-radius:25px;margin: 0 auto") 8
+          p ...
+          div(data-id="box2" style="background:coral;width:30%;border-radius:25px;margin: 0 auto") 5
+        section(data-auto-animate)
+          h2(data-id="title") Map-Reduce
+          p Reducing (average)
+          div(data-id="box" style="background:coral;width:30%;border-radius:25px;margin: 0 auto") 4.52
         section
           h2 Apache Spark
+          ul
+            li Based on Resilient Distributed Datasets (RDDs)
+            li Streaming and batch processing
+            pre
+              code.
+                // Read files from "somedir" into an RDD of 
+                // (filename, content) pairs.
+                val data = sc.textFile("/path/to/somedir") 
+                // Split each file into a list of tokens (words).
+                val tokens = data.flatMap(_.split(" ")) 
+                // Add a count of one to each token, then sum the 
+                // counts per word type.
+                val wordFreq = tokens.map((_, 1)).reduceByKey(_ + _) 
+                // Get the top 10 words. Swap word and count 
+                // to sort by count.
+                wordFreq.sortBy(s => -s._2).map(x => (x._2, x._1))
+                  .top(10) 
 
         section
           h1 Analytic Tools
+        section
+          h2 Jupyter/Colab
           ul
-            li Pandas
-            li Jupyter
-            li Julia
-            li R
+            li Go to 
+              a(href="https://colab.research.google.com")
+                = 'https://colab.research.google.com'
+            li Create a new notebook
+        section
+          h2 Pandas
+          ul
+            li Library for data science in Python
+            li Try the following
+            pre
+              code.
+               import pandas as pd
+               data = pd.read_csv("https://raw.githubusercontent.com/cs109/2014_data/master/countries.csv")
+               data.describe() 
+        section
+          h2 Other languages
+          ul
+            li R - Very popular in statistics
+            li Julia - New fast language for data science
+            li Scala - Java-based functional programming
         section
           h1 Visualisation Tools
-          ul
-            li D3.js
-            li Tableau
         section
-          h1 Corpus Linguistics
+          h2 D3.js
+          a(href="https://observablehq.com/@d3/gallery" target="_blank") Gallery
+        section
+          h2 Matplotlib
+          pre
+            code.
+              import matplotlib.pyplot as plt
+              plt.hist(data["Region"])
+        section
+          h1 Corpora and Data
+        section
+          h2 Types of Linguistic Data
+          ul  
+            li Corpora - collections of texts
+            li Lexicons - information about words
+            li Knowledge bases - structured information about the world
+            li Typological databases - information about languages
+        section
+          h2 Plain-text Corpora
+          ul
+            li Sources such as <a href="https://www.gutenberg.org/" target="_blank">Project Gutenberg</a>, <a href="https://en.wikipedia.org" target="_blank">Wikipedia</a>
+            li Curated corpora such as <a href="http://www.natcorp.ox.ac.uk/" target="_blank">British National Corpus</a> and <a href="https://anc.org/" target="_blank">Open American National Corpus</a>
+            li Massive web corpora such as <a href="https://github.com/allenai/allennlp/discussions/5056" target="_blank">C4</a>
+            ul
+              li 300GB of English data, 9.7TB total!
+        section
+          h2 Annotated Corpora
+          ul
+            li Corpora with syntactic, semantic and other annotations
+            li <a href="https://universaldependencies.org/">Universal Dependencies</a>
+            li <a href="https://catalog.ldc.upenn.edu/LDC2019T13">Penn Treebank</a>
+            li <a href="https://catalog.ldc.upenn.edu/LDC2015T13">PropBank</a>
+        section
+          h2 Universal Dependencies
+          table(style="font-size: 0.5em")
+            tr
+              th ID
+              th Form
+              th Lemma
+              th UPOS
+              th XPOS
+              th Head
+              th Dep
+            tr
+              td 1	
+              td The	
+              td the	
+              td DET	
+              td Definite=Def|PronType=Art	
+              td 2	
+              td det
+            tr
+              td 2	
+              td prevalence	
+              td prevalence	
+              td NOUN	
+              td Number=Sing	
+              td 0	
+              td root	
+            tr
+              td 3	
+              td of	
+              td of	
+              td ADP	
+              td _	
+              td 4	
+              td case
+            tr
+              td 4	
+              td discrimination	
+              td discrimination	
+              td NOUN	
+              td Number=Sing	
+              td 2	
+              td nmod
+            tr
+              td 5	
+              td across	
+              td across	
+              td ADP	
+              td _	
+              td 7	
+              td case
+            tr
+              td 6	
+              td racial	
+              td racial	
+              td ADJ	
+              td Degree=Pos	
+              td 7	
+              td amod
+            tr
+              td 7	
+              td groups	
+              td group	
+              td NOUN	
+              td Number=Plur	
+              td 2	
+              td nmod
+            tr
+              td 8	
+              td in	
+              td in	
+              td ADP	
+              td _	
+              td 10	
+              td case
+            tr
+              td 9	
+              td contemporary	
+              td contemporary	
+              td ADJ	
+              td Degree=Pos	
+              td 10	
+              td amod
+            tr
+              td 10	
+              td America	
+              td America	
+              td PROPN	
+              td Number=Sing	
+              td 2	
+              td nmod
+        section
+          h2 Parallel Corpora
+          ul
+            li <a href="https://opus.nlpl.eu/" target="_blank">OPUS</a> - many languages
+            li <a href="https://www.statmt.org/europarl/" target="_blank">Europarl</a> - 21 languages
+            li <a href="https://www.statmt.org/wmt20/" target="_blank">WMT</a> - 100+ languages
+        section
+          h2 Parallel Corpus Example
+          table(style="font-size: 0.5em")
+            tr
+              th English
+              th Irish
+            tr
+              td Monitoring of the Implementation of Certain Commitments in your Language Scheme 
+              td Tag: faireachán ar chur i bhfeidhm gealltanais áirithe de bhur scéim teanga
+            tr
+              td Hope you are keeping well.
+              td Beatha agus Sláinte.
+            tr
+              td Thank you for your co-operation on this matter. 
+              td Gabhaim buíochas leat as ucht do chomhoibriú ar an ábhar seo.
+            tr
+              td Kind regards, 
+              td Is mise, le meas, _______________ 
+        section
+          h2 Lexicons
+          ul
+            li <a href="https://en-word.net" target="_blank">Open English WordNet</a> - English
+            li <a href="https://babelnet.org/" target="_blank">BabelNet</a> - 271 languages
+            li <a href="https://framenet.icsi.berkeley.edu/fndrupal/" target="_blank">FrameNet</a> - English
+        section
+          h2 Knowledge Bases
+          ul
+            li <a href="https://www.wikidata.org/" target="_blank">Wikidata</a>
+            li <a href="https://www.dbpedia.org/" target="_blank">DBPedia</a>
+            li Many specific knowledge bases
+        section
+          h2 Typologies
+          ul
+            li <a href="https://wals.info/" target="_blank">World Atlas of Language Structures</a>
         section
           h1 Natural Language Processing
         section

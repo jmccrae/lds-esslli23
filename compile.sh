@@ -1,3 +1,3 @@
 for file in src/*.pug; do
-    pug $file --out pages/
+    pug $file --out docs/
 done

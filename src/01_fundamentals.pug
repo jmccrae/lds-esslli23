@@ -16,9 +16,130 @@ html(lang="en")
           h3 John P. McCrae - University of Galway
           h5 Course at ESSLLI 2023
         section
+          h1 Course Overview
+        section
+          h2 Lectures
+          ol
+            li Fundamentals of Linguistic Data Science
+            li Syntax
+            li Semantics
+            li Multilinguality
+            li Perspectives
+        section
+          h2 Course materials
+          ul
+            li 
+              a(href="https://jmccrae.github.io/linguistic-data-science-esslli2023") Webpage
+            li Access to all code and slides through this URL
+        section
+          h2 Hands-on sections
+          ul
+            li We will use Python
+            li Very simple examples, no previous knowledge required
+            li Switch between examples and slides
+        section(data-background-image="https://john.mccr.ae/me.jpg" data-background-opacity=0.5)
+          h2 About me
+          ul
+            li Assistant Professor and University of Galway, Ireland
+            li Researcher in NLP, Linked Data, Digital Humanities
+            li More at 
+              a(href="https://john.mccr.ae")
+                = 'https://john.mccr.ae'
+        section
           h1 What is Data Science?
+        section(data-background-color="white")
+          img(src="img/data_science_venn.webp")
+        section(data-background-image="img/cookie-monster.jpg" data-background-opacity=0.5)
+          h2 Data Ingestion
+          ul
+            li Structured Data 
+              ul
+                li such as CSV, databases, XML
+            li Unstructured Data 
+              ul
+                li such as text, images, audio
+        section(data-background-image="img/library.jpg" data-background-opacity=0.5)
+          h2 Data Storage
+          ul
+            li Cleaning
+            li Deduplication
+            li ETL
+            li Databases
+        section(data-background-image="img/testtubes.jpg" data-background-opacity=0.5)
+          h2 Data Analysis
+          ul
+            li Data Exploration
+            li Predictive Analytics
+            li Machine Learning
+        section(data-background-image="img/talking.jpeg" data-background-opacity=0.5)
+          h2 Communication
+          ul
+            li Visualisation
+            li Reporting
+            li Dashboards
+        section
+          h2 Examples of Data Science
+          ul
+            li Customer Analytics
+            li Supply Chain Optimisation
+            li Improving Patient Care
         section
           h1 Methods for Data Science
+        section
+          h1 Data Storage
+        section
+          h2 SQL
+          pre
+            code.
+              SELECT * FROM table WHERE condition
+          p.
+            Data is stored in a tables; can be difficult to represent complex data
+        section
+          h1 NoSQL
+          pre
+            code.
+              {
+                "name": "John McCrae",
+                "affiliation": "University of Galway",
+                "email": "john@mccr.ae"
+              }
+          p.
+            Flexible data structures; can be difficult to query
+        section
+          h2 Graph Databases
+          pre
+            code.
+              (John McCrae)-[:affiliation]->(University of Galway)
+              (John McCrae)-[:email]->(john@mccr.ae)
+          p.
+            More flexibility but can be very slow to query
+        section
+          h1 Scaling Tools
+        section(data-auto-animate)
+          h2 Apache Hadoop
+          p Based on MapReduce
+          div(data-id=box style="background:cornflowerblue;width:30%;border-radius:25px;") Data
+        section(data-auto-animate)
+          h2 Apache Hadoop
+          p Map
+          div(data-id=box style="background:cornflowerblue;width:30%;border-radius:25px;") Data 1
+          p ...
+          div(data-id=box style="background:cornflowerblue;width:30%;border-radius:25px;") Data N
+        section
+          h2 Apache Spark
+
+        section
+          h1 Analytic Tools
+          ul
+            li Pandas
+            li Jupyter
+            li Julia
+            li R
+        section
+          h1 Visualisation Tools
+          ul
+            li D3.js
+            li Tableau
         section
           h1 Corpus Linguistics
         section
@@ -38,6 +159,7 @@ html(lang="en")
       // - https://revealjs.com/config/
       Reveal.initialize({
               hash: true,
+              slideNumber: true,
 
               // Learn about plugins: https://revealjs.com/plugins/
               plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]

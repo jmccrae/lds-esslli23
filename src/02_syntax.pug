@@ -1,0 +1,47 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no")
+    title Fundamentals of Linguistic Data Science
+    link(rel="stylesheet" href="dist/reset.css")
+    link(rel="stylesheet" href="dist/reveal.css")
+    link(rel="stylesheet" href="dist/theme/beige.css")
+    link(rel="stylesheet" href="plugin/highlight/monokai.css")
+  body
+    div(class="reveal")
+      div(class="slides")
+      section
+        h1 Corpus Selection and Construction
+      section
+        h1 Types, tokens and morphology
+      section
+        h1 Example: English Genitive
+      section
+        h1 Part-of-speech analysis
+      section
+        h1 Example: 1st and 2nd person pronouns
+      section
+        h1 Parsing
+      section
+        h1 Example: Placement of adverbs
+      section
+        h1 Language Usage
+      section
+        h1 Example: Diachronic change
+    script(src="dist/reveal.js")
+    script(src="plugin/notes/notes.js")
+    script(src="plugin/markdown/markdown.js")
+    script(src="plugin/highlight/highlight.js")
+    script.
+      // More info about initialization & config:
+      // - https://revealjs.com/initialization/
+      // - https://revealjs.com/config/
+      Reveal.initialize({
+              hash: true,
+              slideNumber: true,
+    
+              // Learn about plugins: https://revealjs.com/plugins/
+              plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+      });
+    

@@ -11,24 +11,111 @@ html(lang="en")
   body
     div(class="reveal")
       div(class="slides")
-      section
-        h1 Corpus Selection and Construction
-      section
-        h1 Types, tokens and morphology
-      section
-        h1 Example: English Genitive
-      section
-        h1 Part-of-speech analysis
-      section
-        h1 Example: 1st and 2nd person pronouns
-      section
-        h1 Parsing
-      section
-        h1 Example: Placement of adverbs
-      section
-        h1 Language Usage
-      section
-        h1 Example: Diachronic change
+        section
+          h1 Syntax
+          h3 John P. McCrae - University of Galway
+          h5 Course at ESSLLI 2023
+        section
+          h1 Corpus Selection and Construction
+        section
+          h1 Types, tokens and morphology
+        section
+          h2 Types and tokens
+          ul
+            li <b>Tokens</b> refer to the individual words in the text
+            li <b>Types</b> are the distinct words we see in the text
+          div(class="center")
+            p I know that this is simple
+            p 6 <b>Tokens</b>, 5 <b>Types</b>
+        section
+          h2 Tokenization
+          img(src="img/tokenization.svg")
+          small Source: https://spacy.io/usage/spacy-101
+        section
+          h2 Non-linguistic tokens
+          ul
+            li Hashtags/mentions (#amazing, @john)
+            li URLs
+            li Emoticons (:-O, 😀)
+        section
+          h2 Compounds
+          ul
+            li <i>bookshelves</i>, <i>bedroom</i>, <i>policeman</i>
+            li <i>Flachbildschirmfernseher</i> (German: flat screen TV)
+            li <i>bestuurdersaansprakelijkheidsverzekering</i> (Dutch: drivers' liability insurance)
+        section
+          h2 Aside: What is a word?
+          ul
+            li Occurs between spaces (and punctuation)
+            li Can be a single utterance
+            li Has a distinct meaning
+            li Syntactically free
+            li Has an inflectional paradigm (e.g., plural, past tense, genitive case)
+            li (Useful as a) headword in a dictionary
+        section
+          h2 Subword tokenization
+          p Maybe a human definition of word is not the best?
+          p
+            code Super ##cali ##frag ##il ##istic ##ex ##pi ##ali ##do ##cious
+        section
+          h2 WordPiece (Wu et al., 2016)
+          ol 
+            li Initially use only characters as words
+            li Build a probability model on the corpus
+            li Merge two most probable words
+            li Repeat until limit of words is reached of likelihood is below a threshold
+        section
+          h2 Morphology
+          ul
+            li <b>Lemmatization</b>: Reduce words to their base form
+            li <b>Stemming</b>: Reduce words to their stem
+        section
+          h2 Morphology Examples
+          table
+            tr
+              th Word
+              th Lemma
+              th Stem
+            tr
+              th cars
+              th car
+              th car
+            tr
+              th caring
+              th care
+              th car
+            tr
+              th taught
+              th teach
+              th taught (!?)
+          p Stemming is not linguistically motivated
+        section
+          h2 Inflection and Derivation
+          p Inflection captures the lemma and the change that has hap[pened to it
+          p writing = write + PRESENT + PROGRESSIVE
+          p Derivation is how new words are formed
+          p agreement = agree + MENT
+        section
+          h2 Morphological Analysis
+          ul
+            li English is quite simple
+            li Some languages (for example Chinese) have no morphology
+            li In other languages <b>one</b> word can be a whole sentence
+            p وسيكتبونها /wasayaktubuwnahA/ 'and they will write it'
+        section
+          h1 Example: English Genitive
+        section
+          h1 Part-of-speech analysis
+        section
+          h1 Example: 1st and 2nd person pronouns
+        section
+          h1 Parsing
+        section
+          h1 Example: Placement of adverbs
+        section
+          h1 Language Usage
+        section
+          h1 Example: Diachronic change
     script(src="dist/reveal.js")
     script(src="plugin/notes/notes.js")
     script(src="plugin/markdown/markdown.js")

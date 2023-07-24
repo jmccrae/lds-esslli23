@@ -8,6 +8,20 @@ html(lang="en")
     link(rel="stylesheet" href="dist/reveal.css")
     link(rel="stylesheet" href="dist/theme/beige.css")
     link(rel="stylesheet" href="plugin/highlight/monokai.css")
+    style.
+      .pos { padding-left:10px; padding-right:10px;margin-right:2px;border-radius:6px;} 
+      .np { background-color: aqua }
+      .det { background-color: blueviolet }
+      .noun { background-color: coral }
+      .sconj { background-color: crimson }
+      .aux { background-color: darkcyan }
+      .verb { background-color: darkseagreen }
+      .adp { background-color: goldenrod }
+      .verb { background-color: mediumorchid }
+      .np { background-color: peru; font-size:1.7em; }
+      .vp { background-color: springgreen; font-size:1.7em; }
+      .rel { background-color: tomato; font-size:1.7em; }
+      .s { background-color: teal; font-size:3em; }
   body
     div(class="reveal")
       div(class="slides")
@@ -103,15 +117,227 @@ html(lang="en")
             li In other languages <b>one</b> word can be a whole sentence
             p وسيكتبونها /wasayaktubuwnahA/ 'and they will write it'
         section
-          h1 Example: English Genitive
+          h1 Example: English Clitics
+        section
+          h2 Example: English Clitics
+          p Clitics are words that are pronounced as part of another word
+          p In particular we will look at _n't_ 
+          p Does the use of more clitics indicate a more informal text?
         section
           h1 Part-of-speech analysis
         section
-          h1 Example: 1st and 2nd person pronouns
+          h2 Part-of-speech tags
+          table(style="font-size: 0.45em")
+            tr
+              th Tag
+              th Description
+              th Example
+            tr
+              td ADJ 	 
+              td adjective
+              td yellow, big, international
+            tr
+              td ADP 	
+              td adposition
+              td with, in, at
+            tr
+              td ADV 	
+              td adverb
+              td quickly, yesterday, tomorrow
+            tr
+              td AUX 	
+              td auxiliary
+              td is, has (done), will (do)
+            tr
+              td CCONJ 	
+              td coordinating conjunction
+              td and, or, but
+            tr
+              td DET 	
+              td determiner
+              td a, an, the
+            tr
+              td INTJ 	
+              td interjection
+              td psst, ouch, bravo, hello
+            tr
+              td NOUN 	
+              td noun
+              td cat, tree, air, beauty
+            tr
+              td NUM 	
+              td numeral
+              td 1, 2017, one, seventy-seven, IV, MMXIV
+            tr
+              td PART 	
+              td particle
+              td 's, not
+            tr
+              td PRON 	
+              td pronoun
+              td I, you, he, she 
+            tr
+              td PROPN 	
+              td proper noun
+              td Mary, John, London, NATO, HBO
+            tr
+              td PUNCT 	
+              td punctuation
+              td ., (, ), ?
+            tr
+              td SCONJ 	
+              td subordinating conjunction
+              td if, while, that
+            tr
+              td SYM 	
+              td symbol
+              td $, %, §, ©, 😝
+            tr
+              td VERB 	
+              td verb
+              td work, type, run, speak
+            tr
+              td X 	
+              td other
+              td sfpksdpsxmsa
+        section
+          h2 Part-of-speech tagging
+          p Assign a part-of-speech tag to each token
+          table
+            tr
+              th Token
+              th POS
+            tr
+              td I
+              td PRON
+            tr
+              td am
+              td AUX
+            tr
+              td a
+              td DET
+            tr
+              td linguist
+              td NOUN
+        section(data-background-image="img/spacy.jpg" data-background-opacity=0.3)
+          h2 spaCy
+          p For our purposes, we'll use the spaCy library
+        section
+          h2 Example: English genitives
+          p We can now look at the _'s_ genitive
+          p Is this a clitic?
+          p Does the use of more genitives indicate a more informal text?
         section
           h1 Parsing
         section
-          h1 Example: Placement of adverbs
+          h2 Parsing
+          p Understand the syntactic structure of a sentence by means of the relationships between words
+          p The <span style="color:red">girl</span>, who is playing with cars, <span style="color:red">likes</span> toast
+        section(data-auto-animate)
+          h2 Parsing as rewriting
+          div
+            span(data-id="sentence")
+              span(data-id="np1")
+                span(data-id="np2")
+                  span(data-id="w1" class="pos") The 
+                  span(data-id="w2" class="pos") girl,
+                span(data-id="rel1")
+                  span(data-id="w3" class="pos") who 
+                  span(data-id="w4" class="pos") is 
+                  span(data-id="w5" class="pos") playing 
+                  span(data-id="w6" class="pos") with 
+                  span(data-id="w7" class="pos") cars, 
+              span(data-id="vp1")
+                span(data-id="w8" class="pos") likes 
+                span(data-id="w9" class="pos") toast
+        section(data-auto-animate)
+          h2 Parsing as rewriting
+          div
+            span(data-id="sentence")
+              span(data-id="np1")
+                span(data-id="np2")
+                  span(data-id="w1" class="pos det") The 
+                  span(data-id="w2" class="pos noun") girl,
+                span(data-id="rel1")
+                  span(data-id="w3" class="pos sconj") who 
+                  span(data-id="w4" class="pos aux") is 
+                  span(data-id="w5" class="pos verb") playing 
+                  span(data-id="w6" class="pos adp") with 
+                  span(data-id="w7" class="pos noun") cars, 
+              span(data-id="vp1")
+                span(data-id="w8" class="pos verb") likes 
+                span(data-id="w9" class="pos noun") toast
+        section(data-auto-animate)
+          h2 Parsing as rewriting
+          div
+            span(data-id="sentence")
+              span(data-id="np1")
+                span(data-id="np2")
+                  span(data-id="w1" class="pos det") DET 
+                  span(data-id="w2" class="pos noun") NOUN
+                span(data-id="rel1")
+                  span(data-id="w3" class="pos sconj") SCONJ 
+                  span(data-id="w4" class="pos aux") AUX 
+                  span(data-id="w5" class="pos verb") VERB 
+                  span(data-id="w6" class="pos adp") ADP 
+                  span(data-id="w7" class="pos noun") NOUN 
+              span(data-id="vp1")
+                span(data-id="w8" class="pos verb") VERB 
+                span(data-id="w9" class="pos noun") NOUN
+        section(data-auto-animate)
+          h2 Parsing as rewriting
+          div
+            span(data-id="sentence")
+              span(data-id="np1")
+                span(data-id="np2" class="np")
+                  span(data-id="w1" class="pos") DET 
+                  span(data-id="w2" class="pos") NOUN
+                span(data-id="rel1" class="rel")
+                  span(data-id="w3" class="pos") SCONJ 
+                  span(data-id="w4" class="pos") AUX 
+                  span(data-id="w5" class="pos") VERB 
+                  span(data-id="w6" class="pos") ADP 
+                  span(data-id="w7" class="pos") NOUN 
+              span(data-id="vp1" class="vp")
+                span(data-id="w8" class="pos") VERB 
+                span(data-id="w9" class="pos") NOUN
+        section(data-auto-animate)
+          h2 Parsing as rewriting
+          div
+            span(data-id="sentence")
+              span(data-id="np1")
+                span(data-id="np2" class="pos np") NP
+                span(data-id="rel1" class="pos rel") REL
+              span(data-id="vp1" class="pos vp") VP
+        section(data-auto-animate)
+          h2 Parsing as rewriting
+          div
+            span(data-id="sentence")
+              span(data-id="np1" class="pos np") NP
+              span(data-id="vp1" class="pos vp") VP
+        section(data-auto-animate)
+          h2 Parsing as rewriting
+          div
+            span(data-id="sentence")
+              span(data-id="np1" class="pos s") S
+        section
+          h2 Phrase grammar
+          img(src="img/phrase_grammar.svg")
+        section
+          h2 Dependency grammar
+          img(src="img/dependency_grammar.svg")
+        section
+          h2 Syntactic ambiguity
+          img(src="img/syn_ambig.png")
+        section
+          h2 Example: Placement of adverbs
+          p _There is not such thing as an adverb!_
+          p Adverbs are a catch-all category covering several different usages
+          p Many have claimed that adverbs are special version of adjectives
+        section
+          h2 Example: Placement of adverbs
+          p To answer this we will examine if _ly_ adverbs have a different usage pattern than other adverbs
+          p We will define this by what they modify
         section
           h1 Language Usage
         section

@@ -32,6 +32,33 @@ html(lang="en")
         section
           h1 Corpus Selection and Construction
         section
+          h2 Corpus linguistics
+          p Analysis of corpus reveals hidden patterns in language
+          p New tools allow us to find new information hidden in the corpus
+        section
+          h2 Collocations
+          p Collocations are words that occur together
+          p Firth: "You shall know a word by the company it keeps"
+        section
+          h2 Corpus selection
+          p Spoken/written
+          p Dialect
+          p Genre
+          p Time period
+          p Size
+          p Mulitmodality
+        section
+          h2 Corpus annotations
+          p Syntactic annotations
+          p Semantic annotatiosn (e.g., word senses)
+          p Classifications (e.g., sentiment)
+          p Parallel texts
+        section
+          h2 Specialized corpora
+          p Learner corpora
+          p Historical corpora
+          p Noisy user-generated text
+        section
           h1 Types, tokens and morphology
         section
           h2 Types and tokens
@@ -121,7 +148,7 @@ html(lang="en")
         section
           h2 Example: English Clitics
           p Clitics are words that are pronounced as part of another word
-          p In particular we will look at _n't_ 
+          p In particular we will look at <em>n't</em> 
           p Does the use of more clitics indicate a more informal text?
         section
           h1 Part-of-speech analysis
@@ -224,7 +251,7 @@ html(lang="en")
           p For our purposes, we'll use the spaCy library
         section
           h2 Example: English genitives
-          p We can now look at the _'s_ genitive
+          p We can now look at the <em>'s</em> genitive
           p Is this a clitic?
           p Does the use of more genitives indicate a more informal text?
         section
@@ -331,15 +358,36 @@ html(lang="en")
           img(src="img/syn_ambig.png")
         section
           h2 Example: Placement of adverbs
-          p _There is not such thing as an adverb!_
+          p <b>There is not such thing as an adverb!</b>
           p Adverbs are a catch-all category covering several different usages
           p Many have claimed that adverbs are special version of adjectives
         section
           h2 Example: Placement of adverbs
-          p To answer this we will examine if _ly_ adverbs have a different usage pattern than other adverbs
+          p To answer this we will examine if <em>ly</em> adverbs have a different usage pattern than other adverbs
           p We will define this by what they modify
         section
           h1 Language Usage
+        section
+          h2 Multiword Expressions
+          p Parsing allows us to group words together as <b>phrases</b>
+          p We can also use simple (regular expression) patterns to extract <em>chunks</em>
+          pre
+            code(lang="python").
+              grammar = "NP: {&lt;DT&gt;?&lt;JJ&gt;*&lt;NN&gt;}"
+              cp = nltk.RegexpParser(grammar)
+              cp.parse(brown.tagged_sents()[0])
+          a(href="https://colab.research.google.com/drive/1mAf-nFaMoJ7SdOsPjDBoA_6LZUS_xB-j?usp=sharing") Colab Link
+        section
+          h2 Named Entities
+          p Named entities are phrases that refer to specific entities
+          p Further specialised by type (person, location, organisation, etc.)
+          p We can extract these with spaCy
+          pre
+            code(lang="python").
+              doc = nlp("Apple is looking at buying U.K. startup for $1 billion")
+
+              for ent in doc.ents:
+                  print(ent.text, ent.start_char, ent.end_char, ent.label_)
         section
           h1 Example: Diachronic change
     script(src="dist/reveal.js")

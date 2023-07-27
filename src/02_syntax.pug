@@ -18,10 +18,10 @@ html(lang="en")
       .verb { background-color: darkseagreen }
       .adp { background-color: goldenrod }
       .verb { background-color: mediumorchid }
-      .np { background-color: peru; font-size:1.7em; }
-      .vp { background-color: springgreen; font-size:1.7em; }
-      .rel { background-color: tomato; font-size:1.7em; }
-      .s { background-color: teal; font-size:3em; }
+      .np { background-color: peru; }
+      .vp { background-color: springgreen; }
+      .rel { background-color: tomato; }
+      .s { background-color: teal; }
   body
     div(class="reveal")
       div(class="slides")
@@ -357,6 +357,9 @@ html(lang="en")
           h2 Syntactic ambiguity
           img(src="img/syn_ambig.png")
         section
+          h1 Ambiguity
+          a(href="https://www.menti.com/nmv7zbqr9s") https://www.menti.com/nmv7zbqr9s
+        section
           h2 Example: Placement of adverbs
           p <b>There is not such thing as an adverb!</b>
           p Adverbs are a catch-all category covering several different usages
@@ -368,7 +371,7 @@ html(lang="en")
         section
           h1 Language Usage
         section
-          h2 Multiword Expressions
+          h2 Chunking
           p Parsing allows us to group words together as <b>phrases</b>
           p We can also use simple (regular expression) patterns to extract <em>chunks</em>
           pre
@@ -384,10 +387,28 @@ html(lang="en")
           p We can extract these with spaCy
           pre
             code(lang="python").
-              doc = nlp("Apple is looking at buying U.K. startup for $1 billion")
+              doc = nlp("Apple is looking at buying U.K. startup")
 
               for ent in doc.ents:
                   print(ent.text, ent.start_char, ent.end_char, ent.label_)
+        section
+          h2 Multiword Expressions
+          p  Multiword expressions are phrases that have a special meaning
+          p A large annotated corpora of MWEs is the PARSEME corpus
+          a(href="https://gitlab.com/parseme/corpora/-/wikis/home") PARSEME corpus
+        section
+          h2 Concordances
+          p We can use the NLTK concordance function to find examples of a word in context
+          pre
+            code(lang="python").
+              corpus = gutenberg.words('melville-moby_dick.txt')
+              text = Text(corpus)
+              text.concordance("monstrous")
+        section
+          h2 Word Sketches
+          p A one-page, automatic, corpus-derived summary of a word
+          p Used by Sketch Engine in lexicography
+          img(src="img/word_sketch.png")
         section
           h1 Example: Diachronic change
     script(src="dist/reveal.js")

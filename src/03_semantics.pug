@@ -10,7 +10,7 @@ html(lang="en")
     link(rel="stylesheet" href="plugin/highlight/monokai.css")
     div(class="reveal")
       div(class="slides")
-        section(data-background-image="img/tree.png" data-background-opacity=0.5)
+        section(data-background-image="img/semantics1.png" data-background-opacity=0.5)
           h1 Semantics
           h3 John P. McCrae - University of Galway
           h5 Course at ESSLLI 2023
@@ -67,7 +67,7 @@ html(lang="en")
           p Very large
           p Very sparse (many zeros)
           p Not very informative
-        section
+        section(data-background-image="img/words_and_numbers.png" data-background-opacity=0.5)
           h1 Word embeddings
         section
           h2 Word embeddings
@@ -85,7 +85,8 @@ html(lang="en")
           
           p vec(Berlin) ≃ vec(Germany) + vec(Paris) - vec(France)
           img(src="img/analogy.svg" width="50%")
-        section
+        section(data-background-image="img/selection.png" data-background-opacity=0.5)
+          
           h1 Understanding semantic spaces
         section
           h2 Loading word embeddings
@@ -124,7 +125,7 @@ html(lang="en")
         section
           h2 Visualisation with PCA
           img(src="img/pca_plot.png")
-        section
+        section(data-background-image="img/pretraining.png" data-background-opacity=0.5)
           h1 Pretrained language models
         section
           h2 Language Models
@@ -167,7 +168,7 @@ html(lang="en")
         section
           h2 ChatGPT
           p(style="font-size:1.5em") <b>G</b>enerative <b>P</b>re-Trained <b>T</b>ransfomer
-        section
+        section(data-background-image="img/prompt_engineering.png" data-background-opacity=0.5)
           h1 Prompt Engineering
         section
           h2 Prompt Engineering
@@ -221,6 +222,10 @@ html(lang="en")
           p Output:
           pre
             | No
+        section
+          h1 Hands-on: Word Sense Induction
+        section(data-background-image="img/semantics2.png" data-background-opacity=0.5)
+          h1 Summary
     script(src="dist/reveal.js")
     script(src="plugin/notes/notes.js")
     script(src="plugin/markdown/markdown.js")

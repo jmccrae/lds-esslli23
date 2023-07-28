@@ -88,9 +88,42 @@ html(lang="en")
         section
           h1 Understanding semantic spaces
         section
-          h2 Loading word embeddigns
+          h2 Loading word embeddings
+          p We will use the <a href="https://nlp.stanford.edu/projects/glove/">GloVe</a> vectors
+          pre
+            code(language="python").
+              from gensim.models import KeyedVectors
+              glove = KeyedVectors.load_word2vec_format('glove.6B.50d.txt', 
+                                          binary=False, no_header=True)
         section
-          h2 
+          h2 Most similar words
+          pre
+            code(language="python").
+              glove.most_similar("slovenia")
+              [('slovakia', 0.8620874881744385),
+               ('moldova', 0.8049129843711853),
+               ('estonia', 0.7930541634559631),
+               ('montenegro', 0.7922329306602478),
+               ('latvia', 0.7799606323242188),
+               ('croatia', 0.7645576596260071)]
+        section
+          h2 Analogy
+          pre
+            code(language="python").
+              def analogy(x1, x2, y1):
+                result = glove.most_similar(positive=[y1, x2], 
+                                            negative=[x1])
+                return result[0][0]
+        section
+          h2 PCA and t-SNE
+          p Word embeddins have many dimensions
+          p Reduce to 2 dimensions to visualise
+          ul
+            li Principal Component Analysis (PCA) - linear
+            li t-distributed Stochastic Neighbour Embedding (t-SNE) - non-linear
+        section
+          h2 Visualisation with PCA
+          img(src="img/pca_plot.png")
         section
           h1 Pretrained language models
         section

@@ -28,7 +28,7 @@ html(lang="en")
           h1 Mulitlinguality
           h3 John P. McCrae - University of Galway
           h5 Course at ESSLLI 2023
-        section(data-background-image="img/machine_translation.png" data-background-opacity=0.5)
+        section(data-background-image="img/machine_translation.png" data-background-opacity=0.5 data-background-position="top")
           h1 Machine Translation
         section
           h2 History of Machine Translation
@@ -142,7 +142,7 @@ html(lang="en")
         section
           h2 Prompt-based MT
           img(src="img/chatgpt_translate.png")
-        section(data-background-image="img/celtic_robot.png" data-background-opacity=0.5)
+        section(data-background-image="img/celtic_robot.png" data-background-opacity=0.5 data-background-position="top")
           h1 Under-resourced Languages
         section
           h2 What is under-resourced?
@@ -153,6 +153,18 @@ html(lang="en")
         section
           h2 Transfer Learning
           img(src="img/mt_transfer.svg")
+        section
+          h2 Translation-based Transfer Learning
+          img(src="img/translate_transfer.svg")
+        section
+          h2 Parameter-sharing Transfer Learning
+          img(src="img/transfer_learning2.svg" width="60%")
+        section
+          h2 Language Adapters
+          img(src="img/language_adapters.png" width="60%")
+          small Source: Rathnayake et al., Adapter-based fine-tuning of pre-trained multilingual language models for code-mixed and code-switched text classification
+        section
+          h1 Code-mixing and Language Identification
         section
           h2 Code-mixing, switching
           ul
@@ -173,6 +185,8 @@ html(lang="en")
             li Divide-and-conquer
             li Translate to matrix language
             li Zero-shot approach
+        section
+          h1 Hands-on: Language Identification
         section(data-background-image="img/evaluation.png" data-background-opacity=0.5)
           
           h1 Evaluation of Machine Translation

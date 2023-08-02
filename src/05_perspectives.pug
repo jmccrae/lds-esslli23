@@ -18,61 +18,240 @@ html(lang="en")
         section(data-background-image="img/social_media_1.png" data-background-opacity=0.5)
           h1 Social Media Analytics
         section
-          h2 Importance of Social Media
+          h2 Social Media - Enterprise
+          img(src="img/twitter_sentiment.webp")
+          small Image source: https://monkeylearn.com/blog/sentiment-analysis-of-twitter/ 
+        section
+          h2 Social Media - Politics
+          img(src="img/elections.jpg" width="70%")
+          small= "Image source: https://www.forbes.com/sites/waynerash/2020/09/29/new-big-data-sentiment-analysis-show-potential-biden-election-landslide/"
         section
           h2 Ethical Data Collection
+          ul
+            li Copyright
+            li Data Protection/Privacy
+            li Bias (gender, race, sexuality, ...)
+            li Represntativeness
         section
-          h2 Challenges of Social Media
+          h2 Data Collection
+          ul
+            li API
+            li Web Scraping
+            li Crowdsourcing
+            li Data Purchase
+        section
+          h2 Noisy User-Generated Content
+          ul
+            li Spelling
+            li Grammar
+            li Slang
+            li Emojis
+            li Code-mixing
         section(data-background-image="img/emotions.png" data-background-opacity=0.5)
           h1 Sentiment, Emotion, Sarcasm
         section
           h2 Sentiment Analysis
+          ul
+            li Predicting sentiment of text
+            li Binary (positive/negative) or graded (0-5)
         section
           h2 Challenges of Sentiment Analysis
+          ul
+            li Indirectness: "Although the product is disliked by many, it is still popular"
+            li Ambiguity: "The concert was crazy" vs. "The traffic was crazy"
+            li Irony: "I love it when my flight is delayed"
+            li Negation: "I don't like it"
         section
           h2 Lexicon Approaches
+          p Generate a lexicon of positive and negative words
+          p Use counts to evaluate sentiment
+          table
+            tr
+              th Positive
+              th Negative
+            tr
+              td good
+              td bad
+            tr
+              td great
+              td terrible
+            tr
+              td excellent
+              td awful
+            tr
+              td ...
+              td ...
         section
-          h2 Machine Learning Approaches
+          h2 SentiWordNet
+          img(src="img/sentiwordnet.png")
+        section
+          h2 Machine Learning Approaches - Features
+          ul
+            li Sentiment features (sentiment lexicon)
+            li Linguistic features (n-grams, ...)
+            li Social Media features (hashtags, emoticons, …)
+            li Other features (negation)
+            li Feature selection and weighting (occurrence (binary), freq, PMI, TF-IDF)
+        section
+          h2 Machine Learning Approaches - Deep Learning
+          ul
+            li LSTMs
+            li Pre-trained Language Models
+            li Prompt-based Learning
         section
           h2 Aspect-Based Sentiment Analysis
+          p "The camera’s focus was bad, but has a great size and is easy-to-use."
+          p Aspects:
+          ul
+            li Focus (negative)
+            li Size (positive)
+            li Ease-of-use (positive)
         section
           h2 Emotion Analysis
-        section
-          h2 Emotion models - Plutchik
+          ul 
+            li Emotion
+            ul
+              li angry, sad, joyful, fearful, ashamed, proud, elated
+            li Mood
+            ul
+              li cheerful, gloomy, irritable, listless, depressed, buoyant
+            li Interpersonal stances
+            ul
+              li friendly, flirtatious, distant, cold, warm, supportive, contemptuous
+            li Attitudes
+            ul
+              li liking, loving, hating, valuing, desiring
+            li Personality traits
+            ul
+              li nervous, anxious, reckless, morose, hostile, jealous
         section
           h2 Emotion models - Ekman
+          img(src="img/ekman.jpg" width="50%")
+          small Source: https://sites.tufts.edu/emotiononthebrain/2014/12/08/am-i-in-trouble-interpreting-facial-expressions/
+        section
+          h2 Emotion models - Plutchik
+          div
+            img(src="img/plutchik.webp" width="50%")
+          small Source: Machine Elf 1735 (public domain)
         section
           h2 Emotion models - Lövheim (VAD)
+          img(src="img/vad.jpg" width="50%")
+          small Source: Mitrut et al. (2019) Emotion Classification Based on Biophysical Signals and Machine Learning Techniques
         section
           h1 Hands-on: Sarcasm Detection
         section(data-background-image="img/distant_reading.png" data-background-opacity=0.5)
           h1 Distant Reading
         section
           h2 Close vs Distance Reading
+          ul
+            li Close reading is the traditional way of reading a text
+            li Distant reading uses computational methods to analyse canons of text
+            li Term attributed to Franco Moretti (2000)
+          p(style="font-size:0.7em;") "So far as the engines of history are concerned, meaning does not matter. In principle, one could study the history of a literary tradition without reading any of literature. ... the main virtue of the computerized content analysis methods I use is that they save one from actually having to read the literature" - Martindale
         section
           h2 "The Great Unread"
+          ul
+            li Thousands of books published in 19th century England
+            li Only a few studied now by famous authors
+            li Computational techniques can reveal trends
+            ul
+              li Titles became shorter
+              li Text became less abstract
         section
-          h2 Analysis methods for Distant Reading
-          a https://uta.pressbooks.pub/datanotebook/chapter/1-4-distant-reading/
+          h4 Analysis methods for Distant Reading - Diachronic Frequency Analysis
+          img(src="img/presidents_freq.png" width="65%")
+          small Source: Figure 1.4.1 – The Atlantic’s “The Language of the State of the Union” © Benjamin Schmidt, Mitch Fraa, Chris Barna, Libby Bawcombe, Noah Gordon, Betsy Ebersole, Jennie Rothenberg Gritz 
+        section
+          h4 Analysis methods for Distant Reading - Lexical Diversity
+          img(src="img/hip_hop_vocab.png" width="90%")
+          small Source: Matt Daniels
+        section
+          h4 Analysis methods for Distant Reading - Topic Modelling
+          img(src="img/topic_modelling.png")
         section
           h2 Narrative Analysis
-          a https://researchmethod.net/narrative-analysis/
+          ul
+            li Content (topics, characters, events, ...)
+            li Structure (plot, character relationsships, ...)
+            li Discourse (narrator, style, ...)
+          p Approach: collect text, annotate, analyse
         section(data-background-image="img/network_of_language.png" data-background-opacity=0.5) 
           h1 Linguistic Linked Data
         section
           h2 Structured and Unstructured Data
+          ul
+            li Unstructuted data is text, images, audio, video, ...
+            li Structured data is data in a database
+            li Lots of knowledge, especially in graph form
+        section
+          h2 Wikidata
+          p Massive knowledge base
+          a(href="https://www.wikidata.org/wiki/Q437") Q437
         section
           h2 Linked Data
+          img(src="img/linked_data_principles.svg")
         section
-          h2 Linguistic Linked Data
+          div(style="width:30%;float:left")
+            h2 Linked Open Data Cloud
+          div(style="width:70%;float:left")
+            img(src="img/lod-cloud-sm.jpg" width="80%")
+        section
+          div(style="width:30%;float:left")
+            h2 Linguistic Linked Open Data Cloud
+          div(style="width:70%;float:left")
+            img(src="img/linguistic-lod.png" width="80%")
         section
           h2 Promise of Linguistic Linked Data
+          ul
+            li Representation and Modelling
+            li Structural Interoperability
+            li Federation 
+            li Ecosystem 
+            li Expressivity 
+            li Conceptual Interoperability 
+            li Dynamic Import 
         section
           h2 Interoperability
+          p Different annotation schemes
+          table(style="font-size:0.7em;")
+            tr
+              td 			
+              td Susanne	
+              td Penn
+            tr
+              td The			
+              td AT			
+              td DT
+            tr
+              td Fulton		
+              td NP1s		
+              td NNP
+            tr
+              td County		
+              td NNL1cb		
+              td NNP
+            tr
+              td Grand		
+              td JJ			
+              td NNP
+            tr
+              td Jury		
+              td NN1c		
+              td NNP
+            tr
+              td said		
+              td VVDv		
+              td VBD
+            tr
+              td Friday		
+              td NPD1		
+              td NNP
         section
           h2 NLP Interchange Format
+          img(src="img/nif.png" width="80%")
         section
           h2 OntoLex-Lemon - Lexicon Model for Ontologies
+          img(src="img/ontolex.svg")
         section(data-background-image="img/curtain_call.png" data-background-opacity=0.5)
           h1 Summary
 

@@ -15,16 +15,17 @@ html(lang="en")
           h1 Fundamentals of Linguistic Data Science
           h3 John P. McCrae - University of Galway
           h5 Course at ESSLLI 2023
-        section
+        section(data-background-image="img/course_overview.png" data-background-opacity=0.5)
+          
           h1 Course Overview
         section
           h2 Lectures
-          ol
-            li Fundamentals of Linguistic Data Science
-            li Syntax
-            li Semantics (and Large Language Models)
-            li Multilinguality
-            li Perspectives
+          ul
+            li <b>Mon</b>: Fundamentals of Linguistic Data Science
+            li <b>Tue</b>: Syntax
+            li <b>Wed</b>: Semantics (incl. Large Language Models)
+            li <b>Thu</b>: Multilinguality
+            li <b>Fri</b>: Perspectives
         section
           h2 Course materials
           ul
@@ -40,7 +41,7 @@ html(lang="en")
         section(data-background-image="https://john.mccr.ae/me.jpg" data-background-opacity=0.5)
           h2 About me
           ul
-            li Assistant Professor and University of Galway, Ireland
+            li Assistant Professor at University of Galway, Ireland
             li Researcher in NLP, Linked Data, Digital Humanities
             li More at 
               a(href="https://john.mccr.ae")
@@ -49,10 +50,27 @@ html(lang="en")
           h2 About you
           a(href='https://www.menti.com/alddspo43ixx') 
             = 'Go to https://www.menti.com/alddspo43ixx'
-        section
+        section(data-background-image="img/data_science_2.png" data-background-opacity=0.5)
           h1 What is Data Science?
         section(data-background-color="white")
           img(src="img/data_science_venn.webp")
+        section
+          h2 What is Linguistic Data Science?
+          div(style="width:33%;float:left")
+            h4 Natural Language Processing
+            ul
+              li Builds system
+              li No linguistic knowledge needed!
+          div(style="width:33%;float:left")
+            h4 Linguistic Data Science
+            ul
+              li Uses machine learning
+              li Answers linguistic questions
+          div(style="width:33%;float:left")
+            h4 Quantitative (Corpus) Linguistics
+            ul
+              li Statistics
+              li Only corpus data
         section(data-background-image="img/monster.png" data-background-opacity=0.5)
           h2 Data Ingestion
           ul
@@ -87,9 +105,9 @@ html(lang="en")
             li Customer Analytics
             li Supply Chain Optimisation
             li Improving Patient Care
-        section
+        section(data-background-image="img/data_science_methods_1.png" data-background-opacity=0.5)
           h1 Methods for Data Science
-        section
+        section(data-background-image="img/data_storage.png" data-background-opacity=0.5)
           h1 Data Storage
         section
           h2 SQL
@@ -117,7 +135,7 @@ html(lang="en")
               (John McCrae)-[:email]->(john@mccr.ae)
           p.
             More flexibility but can be very slow to query
-        section
+        section(data-background-image="img/robot_scaling.png" data-background-opacity=0.5)
           h1 Scaling Tools
         section(data-auto-animate data-background-image="img/Hadoop_logo_new.svg" data-background-opacity=0.3)
           h2 Apache Hadoop
@@ -144,22 +162,9 @@ html(lang="en")
           ul
             li Based on Resilient Distributed Datasets (RDDs)
             li Streaming and batch processing
-            pre
-              code.
-                // Read files from "somedir" into an RDD of 
-                // (filename, content) pairs.
-                val data = sc.textFile("/path/to/somedir") 
-                // Split each file into a list of tokens (words).
-                val tokens = data.flatMap(_.split(" ")) 
-                // Add a count of one to each token, then sum the 
-                // counts per word type.
-                val wordFreq = tokens.map((_, 1)).reduceByKey(_ + _) 
-                // Get the top 10 words. Swap word and count 
-                // to sort by count.
-                wordFreq.sortBy(s => -s._2).map(x => (x._2, x._1))
-                  .top(10) 
+            img(src="img/spark_data_mapping.svg")
 
-        section
+        section(data-background-image="img/robot_analysis.png" data-background-opacity=0.5)
           h1 Analytic Tools
         section
           h2 Jupyter/Colab
@@ -173,10 +178,12 @@ html(lang="en")
           ul
             li Library for data science in Python
             li Try the following
-            pre
+            pre(style="width:100%")
               code.
                import pandas as pd
-               data = pd.read_csv("https://raw.githubusercontent.com/cs109/2014_data/master/countries.csv")
+               data = pd.read_csv("https://raw.github" +
+               "usercontent.com/cs109/2014_data/" +
+               "master/countries.csv")
                data.describe() 
         section
           h2 Other languages
@@ -184,7 +191,7 @@ html(lang="en")
             li R - Very popular in statistics
             li Julia - New fast language for data science
             li Scala - Java-based functional programming
-        section
+        section(data-background-image="img/visualization.png" data-background-opacity=0.5)
           h1 Visualisation Tools
         section
           h2 D3.js
@@ -196,6 +203,9 @@ html(lang="en")
               import matplotlib.pyplot as plt
               plt.hist(data["Region"])
         section
+          h2 Seaborn
+          a(href="https://seaborn.pydata.org/examples/index.html") Gallery
+        section(data-background-image="img/corpus.png" data-background-opacity=0.5)
           h1 Corpora and Data
         section
           h2 Types of Linguistic Data
@@ -350,7 +360,7 @@ html(lang="en")
           h2 Typologies
           ul
             li <a href="https://wals.info/" target="_blank">World Atlas of Language Structures</a>
-        section
+        section(data-background-image="img/natural_language_processing.png" data-background-opacity=0.5 data-background-position="top")
           h1 Natural Language Processing
         section
           h2 NLP as a Black Box
@@ -373,7 +383,7 @@ html(lang="en")
         section
           h2 Information Extraction
           img(src="img/nlp_bb7.svg")
-        section
+        section(data-background-image="img/machine_learning_1.png" data-background-opacity=0.5)
           h1 Machine Learning
         section
           h2 Supervised Learning
@@ -384,12 +394,23 @@ html(lang="en")
           small Source: https://towardsdatascience.com/k-means-a-complete-introduction-1702af9cd8c 
         section
           h2 Reinforcement Learning
-          img(src="img/Reinforcement_learning_diagram.svg")
+          div
+            img(src="img/Reinforcement_learning_diagram.svg" width="50%")
           small Source: Wikipedia
         section
           h2 Deep Learning (pretrained models)
           img(src="img/Pre-trained learning.svg")
-
+        section(data-background-image="img/linguistic_data_science_1.png" data-background-opacity=0.5)
+          h1 Summary
+        section
+          h2 Summary
+          ul
+            li Linguistic Data Science is application of data science to linguistics
+            li Answers linguistic questions using:
+            ul
+              li Big Data
+              li Natural Language Processing
+              li Machine Learning
     script(src="dist/reveal.js")
     script(src="plugin/notes/notes.js")
     script(src="plugin/markdown/markdown.js")

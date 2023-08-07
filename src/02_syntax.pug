@@ -29,6 +29,7 @@ html(lang="en")
           h1 Syntax
           h3 John P. McCrae - University of Galway
           h5 Course at ESSLLI 2023
+          img(src="img/uog.svg" style="position:absolute;left:70%;top:110%;width:500px;")
         section(data-background-image="img/corpus_selection.png" data-background-opacity=0.5)
           h1 Corpus Selection and Construction
         section
@@ -39,25 +40,32 @@ html(lang="en")
           h2 Collocations
           p Collocations are words that occur together
           p Firth: "You shall know a word by the company it keeps"
+          h5 Add image of Firth
         section
           h2 Corpus selection
-          p Spoken/written
-          p Dialect
-          p Genre
-          p Time period
-          p Size
-          p Multimodality
+          div(style="width:50%;float:left")
+            ul
+              li Spoken/written
+              li Dialect
+              li Genre
+          div(style="width:50%;float:right")
+            ul
+              li Time period
+              li Size
+              li Multimodality
         section
           h2 Corpus annotations
-          p Syntactic annotations
-          p Semantic annotations (e.g., word senses)
-          p Classifications (e.g., sentiment)
-          p Parallel texts
+          ul
+            li Syntactic annotations
+            li Semantic annotations (e.g., word senses)
+            li Classifications (e.g., sentiment)
+            li Parallel texts
         section
           h2 Specialized corpora
-          p Learner corpora
-          p Historical corpora
-          p Noisy user-generated text
+          ul
+            li Learner corpora
+            li Historical corpora
+            li Noisy user-generated text
         section(data-background-image="img/morphology.png" data-background-opacity=0.5)
           h1 Types, tokens and morphology
         section
@@ -66,7 +74,8 @@ html(lang="en")
             li <b>Tokens</b> refer to the individual words in the text
             li <b>Types</b> are the distinct words we see in the text
           div(class="center")
-            p I know that this is simple
+            p 
+              em I know that this is simple
             p 6 <b>Tokens</b>, 5 <b>Types</b>
         section
           h2 Tokenization
@@ -85,6 +94,13 @@ html(lang="en")
             li <i>Flachbildschirmfernseher</i> (German: flat screen TV)
             li <i>bestuurdersaansprakelijkheidsverzekering</i> (Dutch: drivers' liability insurance)
         section
+          h2 Tokenization in Asian Languages
+          ul
+            li Chinese, Japanese and Thai do not use spaces at all
+            li Other languages (Vietnamese, Tibetan, ...) space every syllable
+            li Tokenization for these languages is non-trivial
+          h5 Background - Text collage (if I have time)
+        section
           h2 Aside: What is a word?
           ul
             li Occurs between spaces (and punctuation)
@@ -93,10 +109,11 @@ html(lang="en")
             li Syntactically free
             li Has an inflectional paradigm (e.g., plural, past tense, genitive case)
             li (Useful as a) headword in a dictionary
+          p Mostly overlapping definitions!
         section
           h2 Subword tokenization
           p Maybe a human definition of word is not the best?
-          p
+          pre
             code Super ##cali ##frag ##il ##istic ##ex ##pi ##ali ##do ##cious
         section
           h2 WordPiece (Wu et al., 2016)
@@ -132,24 +149,28 @@ html(lang="en")
           p Stemming is not linguistically motivated
         section
           h2 Inflection and Derivation
-          p Inflection captures the lemma and the change that has hap[pened to it
-          p writing = write + PRESENT + PROGRESSIVE
-          p Derivation is how new words are formed
-          p agreement = agree + MENT
+          ul 
+            li Inflection captures the lemma and the change that has happened to it
+            ul
+              li writing = write + PRESENT + PROGRESSIVE
+            li Derivation is how new words are formed
+            ul
+              li agreement = agree + MENT
         section
           h2 Morphological Analysis
           ul
-            li English is quite simple
-            li Some languages (for example Chinese) have no morphology
+            li English is <em>quite</em> simple
+            li Some languages (Chinese, ...) have no morphology
             li In other languages <b>one</b> word can be a whole sentence
             p وسيكتبونها /wasayaktubuwnahA/ 'and they will write it'
         section
           h1 Example: English Clitics
         section
           h2 Example: English Clitics
-          p Clitics are words that are pronounced as part of another word
-          p In particular we will look at <em>n't</em> 
-          p Does the use of more clitics indicate a more informal text?
+          ul 
+            li Clitics are words that are pronounced as part of another word
+            li In particular we will look at <em>n't</em> 
+            li Does the use of more clitics indicate a more informal text?
         section(data-background-image="img/parts_of_speech.png" data-background-opacity=0.5)
           h1 Part-of-speech analysis
         section
@@ -251,15 +272,17 @@ html(lang="en")
           p For our purposes, we'll use the spaCy library
         section
           h2 Example: English genitives
-          p We can now look at the <em>'s</em> genitive
-          p Is this a clitic?
-          p Does the use of more genitives indicate a more informal text?
+          ul
+            li We can now look at the <em>'s</em> genitive
+            li Is this a clitic?
+            li Does the use of more genitives indicate a more informal text?
         section(data-background-image="img/robot_parsing.png" data-background-opacity=0.5)
           h1 Parsing
         section
           h2 Parsing
           p Understand the syntactic structure of a sentence by means of the relationships between words
-          p The <span style="color:red">girl</span>, who is playing with cars, <span style="color:red">likes</span> toast
+          p 
+            em The <span style="color:red">girl</span>, who is playing with cars, <span style="color:red">likes</span> toast
         section(data-auto-animate)
           h2 Parsing as rewriting
           div
@@ -361,19 +384,22 @@ html(lang="en")
           a(href="https://www.menti.com/nmv7zbqr9s") https://www.menti.com/nmv7zbqr9s
         section
           h2 Example: Placement of adverbs
-          p <b>There is not such thing as an adverb!</b>
-          p Adverbs are a catch-all category covering several different usages
-          p Many have claimed that adverbs are special version of adjectives
+          ul
+            li <b>There is not such thing as an adverb!</b>
+            li Adverbs are a catch-all category covering several different usages
+            li Many have claimed that adverbs are special version of adjectives
         section
           h2 Example: Placement of adverbs
-          p To answer this we will examine if <em>ly</em> adverbs have a different usage pattern than other adverbs
-          p We will define this by what they modify
+          ul
+            li   We will examine if <em>ly</em> adverbs have a different usage pattern than other adverbs
+            li   We will define this by what they modify
         section(data-background-image="img/robot_speaking.png" data-background-opacity=0.5)
           h1 Language Usage
         section
           h2 Chunking
-          p Parsing allows us to group words together as <b>phrases</b>
-          p We can also use simple (regular expression) patterns to extract <em>chunks</em>
+          ul
+            li Parsing allows us to group words together as <b>phrases</b>
+            li We can also use simple (regular expression) patterns to extract <em>chunks</em>
           pre
             code(lang="python").
               grammar = "NP: {&lt;DT&gt;?&lt;JJ&gt;*&lt;NN&gt;}"
@@ -382,9 +408,10 @@ html(lang="en")
           a(href="https://colab.research.google.com/drive/1mAf-nFaMoJ7SdOsPjDBoA_6LZUS_xB-j?usp=sharing") Colab Link
         section
           h2 Named Entities
-          p Named entities are phrases that refer to specific entities
-          p Further specialised by type (person, location, organisation, etc.)
-          p We can extract these with spaCy
+          ul
+            li Named entities are phrases that refer to specific entities
+            li Further specialised by type (person, location, organisation, etc.)
+            li We can extract these with spaCy
           pre
             code(lang="python").
               doc = nlp("Apple is looking at buying U.K. startup")
@@ -393,9 +420,11 @@ html(lang="en")
                   print(ent.text, ent.start_char, ent.end_char, ent.label_)
         section
           h2 Multiword Expressions
-          p  Multiword expressions are phrases that have a special meaning
-          p A large annotated corpora of MWEs is the PARSEME corpus
-          a(href="https://gitlab.com/parseme/corpora/-/wikis/home") PARSEME corpus
+          ul
+            li  Multiword expressions are phrases that have a special meaning
+            li A large annotated corpora of MWEs is the PARSEME corpus
+            li 
+              a(href="https://gitlab.com/parseme/corpora/-/wikis/home") PARSEME corpus
         section
           h2 Concordances
           p We can use the NLTK concordance function to find examples of a word in context
@@ -406,13 +435,22 @@ html(lang="en")
               text.concordance("monstrous")
         section
           h2 Word Sketches
-          p A one-page, automatic, corpus-derived summary of a word
-          p Used by Sketch Engine in lexicography
+          ul
+            li A one-page, automatic, corpus-derived summary of a word
+            li Used by Sketch Engine in lexicography
           img(src="img/word_sketch.png")
         section
           h1 Example: Diachronic change
         section(data-background-image="img/tree.png" data-background-opacity=0.5)
           h1 Summary
+        section
+          h2 Summary
+          ul
+            li Corpus selection is key to answering linguistic research questions
+            li Modern NLP can analyse words, syntax, dependencies and language usage
+            li Concordance can reveal interesting patterns of language usage
+          small 
+            a(href="index.html") Back
     script(src="dist/reveal.js")
     script(src="plugin/notes/notes.js")
     script(src="plugin/markdown/markdown.js")

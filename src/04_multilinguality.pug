@@ -28,6 +28,7 @@ html(lang="en")
           h1 Multilinguality
           h3 John P. McCrae - University of Galway
           h5 Course at ESSLLI 2023
+          img(src="img/uog.svg" style="position:absolute;left:70%;top:110%;width:500px;")
         section(data-background-image="img/machine_translation.png" data-background-opacity=0.5 data-background-position="top")
           h1 Machine Translation
         section
@@ -67,7 +68,7 @@ html(lang="en")
           ul
             li Translation depends on context
             ul
-              li "Black Eye" is "Blaues Auge" (<em>blue eye</em>) in German and "ojo morado" (<em>violet eye </em>) in Spanish
+              li "Black Eye" is "<span style="color:blue;">blaues</span> Auge" (<em>blue eye</em>) in German and "ojo <span style="color:violet">morado</span>" (<em>violet eye </em>) in Spanish
             li Subtle difference matter
             ul
               li "value" can mean "worth", "price" or "importance" in different contexts
@@ -123,6 +124,9 @@ html(lang="en")
                 td  表妹
                 td younger
                 td mother's sibling's or father's sister's daughter
+        section
+          h1 Buzz Group
+          p Why is translation hard in your language?
         section
           h2 Under-resourced Languages
           div(style="width:40%;float:left")
@@ -187,7 +191,7 @@ html(lang="en")
             li Zero-shot approach
         section
           h1 Hands-on: Language Identification
-        section(data-background-image="img/evaluation.png" data-background-opacity=0.5)
+        section(data-background-image="img/evaluation.png" data-background-opacity=0.5 data-background-position="top")
           
           h1 Evaluation of Machine Translation
         section(data-auto-animate)
@@ -380,7 +384,15 @@ html(lang="en")
 
         section(data-background-image="img/multilingual2.png" data-background-opacity=0.5)
           h1 Summary
-          a(href="https://slator.com/yes-now-they-claim-machines-outperform-human-translation-in-adequacy/") Is machine translation solved?
+        section
+          h2 Summary
+          ul
+            li
+              a(href="https://slator.com/yes-now-they-claim-machines-outperform-human-translation-in-adequacy/") Is machine translation solved?
+            li Still a challenge for <b>most</b> of the world's languages
+            li Next billion internet users will speak even more languages
+          small 
+            a(href="index.html") Back
 
     script(src="dist/reveal.js")
     script(src="plugin/notes/notes.js")

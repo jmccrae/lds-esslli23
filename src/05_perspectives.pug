@@ -12,9 +12,10 @@ html(lang="en")
     div(class="reveal")
       div(class="slides")
         section(data-background-image="img/perspectives.png" data-background-opacity=0.5)
-          h1 Perspectives on Linguistic Data Science
+          h1(style="font-size:3.0em") Perspectives on Linguistic Data Science
           h3 John P. McCrae - University of Galway
           h5 Course at ESSLLI 2023
+          img(src="img/uog.svg" style="position:absolute;left:70%;top:110%;width:500px;")
         section(data-background-image="img/social_media_1.png" data-background-opacity=0.5)
           h1 Social Media Analytics
         section
@@ -95,7 +96,7 @@ html(lang="en")
         section
           h2 Machine Learning Approaches - Deep Learning
           ul
-            li LSTMs
+            li Deep neural networks (LSTM, transformer, ...)
             li Pre-trained Language Models
             li Prompt-based Learning
         section
@@ -108,7 +109,7 @@ html(lang="en")
             li Ease-of-use (positive)
         section
           h2 Emotion Analysis
-          ul 
+          ul(style="font-size:0.9em")
             li Emotion
             ul
               li angry, sad, joyful, fearful, ashamed, proud, elated
@@ -254,6 +255,18 @@ html(lang="en")
           img(src="img/ontolex.svg")
         section(data-background-image="img/curtain_call.png" data-background-opacity=0.5)
           h1 Summary
+        section
+          h2 Summary
+          ul
+            li Social media is an important data source (but be careful!)
+            li Sentiment and emotion analysis is achieving good performance
+            li Computers can now tackle the "great unread"
+            li Linking data can increase interoperability and usabilty
+        section
+          h2 Thank you for attending the course!
+          p Feel free to contact me at <a href="mailto:john@mccr.ae">john@mccr.ae</a> if you have any questions
+          small 
+            a(href="index.html") Back
 
     script(src="dist/reveal.js")
     script(src="plugin/notes/notes.js")

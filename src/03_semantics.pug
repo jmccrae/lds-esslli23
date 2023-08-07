@@ -14,6 +14,7 @@ html(lang="en")
           h1 Semantics
           h3 John P. McCrae - University of Galway
           h5 Course at ESSLLI 2023
+          img(src="img/uog.svg" style="position:absolute;left:70%;top:110%;width:500px;")
         section(data-background-image="https://i.makeagif.com/media/6-07-2022/0QaCig.gif" data-background-opacity=0.5)
           h1 Vector space models
         section
@@ -59,9 +60,13 @@ html(lang="en")
           p Euclidean distance (distance between vectors)
           pre
             code(lang="python").
-              from sklearn.metrics.pairwise import cosine_similarity, euclidean_distance
-              cosine_similarity(term_document_matrix[0], term_document_matrix[1])
-              euclidean_distance(term_document_matrix[0], term_document_matrix[1])
+              from sklearn.metrics.pairwise import (cosine_similarity, 
+                euclidean_distance)
+
+              cosine_similarity(term_document_matrix[0], 
+                                term_document_matrix[1])
+              euclidean_distance(term_document_matrix[0], 
+                                 term_document_matrix[1])
         section
           h2 Term-document matrix
           p Very large
@@ -117,14 +122,15 @@ html(lang="en")
                 return result[0][0]
         section
           h2 PCA and t-SNE
-          p Word embeddings have many dimensions
-          p Reduce to 2 dimensions to visualise
           ul
-            li Principal Component Analysis (PCA) - linear
-            li t-distributed Stochastic Neighbour Embedding (t-SNE) - non-linear
+            li Word embeddings have many dimensions
+            li Reduce to 2 dimensions to visualise
+            ul
+              li Principal Component Analysis (PCA) - linear
+              li t-distributed Stochastic Neighbour Embedding (t-SNE) - non-linear
         section
           h2 Visualisation with PCA
-          img(src="img/pca_plot.png")
+          img(src="img/pca_plot.png" width="50%")
         section(data-background-image="img/pretraining.png" data-background-opacity=0.5)
           h1 Pretrained language models
         section
@@ -145,6 +151,7 @@ html(lang="en")
 
           p \[ \max_{w \in \mathrm{vocabulary}} p(\mathrm{what~is~the~next~} w)\]
           p Repeating this allows us to generate text
+          h5 Check math bug
         section
           h2 Pretraining
           p Most models are trained <em>autoregressively</em>
@@ -155,13 +162,17 @@ html(lang="en")
             li(class="fragment") shipping in the caribbean and off the ???
             li(class="fragment") she was the daughter of an african ???
         section
+          h1 Guess the word
+          h5 TODO
+        section
           h2 Transformers
-          p Most popular architecture at the moment
-          p Why transformers?
-          p Natural language is hard to do math with
           ul
-            li Words not numbers
-            li Sentences of different lengths
+            li Most popular architecture at the moment
+            li Why transformers?
+            li Natural language is hard to do math with:
+            ul
+              li Words not numbers
+              li Sentences of different lengths
         section
           h2 Transformers
           img(src="img/transformers.svg", width="50%")
@@ -172,9 +183,11 @@ html(lang="en")
           h1 Prompt Engineering
         section
           h2 Prompt Engineering
-          p Large (>10B parameter) models demonstrate emergent properties
-          p Using the correct initial text (prompt) we can extra information from the language model
-          a(href="https://huggingface.co/google/flan-t5-base") Huggingface Hub
+          ul
+            li Large (>10B parameter) models demonstrate emergent properties
+            li Using the correct initial text (prompt) we can extra information from the language model
+            li
+              a(href="https://huggingface.co/google/flan-t5-base") Huggingface Hub
         section
           h2 Zero-shot prompting
           p Input:
@@ -200,12 +213,16 @@ html(lang="en")
           h2 Chain-of-thought prompting
           p Input:
           pre
-            | Q: The odd numbers in this group add up to an even number: 4, 8, 9, 15, 12, 2, 1.
-            | A: Adding all the odd numbers (9, 15, 1) gives 25. The answer is False.
-            | The odd numbers in this group add up to an even number: 15, 32, 5, 13, 82, 7, 1. 
+            | Q: The odd numbers in this group add up to an even 
+            | number: 4, 8, 9, 15, 12, 2, 1.
+            | A: Adding all the odd numbers (9, 15, 1) gives 25. 
+            | The answer is False.
+            | The odd numbers in this group add up to an even 
+            | number: 15, 32, 5, 13, 82, 7, 1. 
           p Output:
           pre
-            Adding all the odd numbers (15, 5, 13, 7, 1) gives 41. The answer is False.
+            | Adding all the odd numbers (15, 5, 13, 7, 1) gives 41. 
+            | The answer is False.
         section
           h2 Self-evaluation
           p Input:
@@ -226,6 +243,14 @@ html(lang="en")
           h1 Hands-on: Word Sense Induction
         section(data-background-image="img/semantics2.png" data-background-opacity=0.5)
           h1 Summary
+        section
+          h2 Summary
+          ul
+            li Vectors allow us to do maths with language
+            li Word embeddings reveal hidden semantic relations
+            li Large language models show (astonishing) ability to generate <span style="color:coral">plausible</span> dialogue
+          small 
+            a(href="index.html") Back
     script(src="dist/reveal.js")
     script(src="plugin/notes/notes.js")
     script(src="plugin/markdown/markdown.js")

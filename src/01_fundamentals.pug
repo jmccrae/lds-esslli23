@@ -8,6 +8,20 @@ html(lang="en")
     link(rel="stylesheet" href="dist/reveal.css")
     link(rel="stylesheet" href="dist/theme/beige.css")
     link(rel="stylesheet" href="plugin/highlight/monokai.css")
+    style.
+      .flcont {
+          border: 1px solid #DDDDDD;
+          width: 200px;
+          height: 200px;
+          position:relative;
+      }
+      .floating {
+          float: left;
+          position: absolute;
+          left: 0px;
+          top: 0px;
+          background-color: grey;
+      }
   body
     div(class="reveal")
       div(class="slides")
@@ -15,8 +29,6 @@ html(lang="en")
           h1 Fundamentals of Linguistic Data Science
           h3 John P. McCrae - University of Galway
           h5 Course at ESSLLI 2023
-          div(style="position:relative")
-            img(src="img/uog.svg" style="position:absolute;left:70%;top:110%;width:500px;")
         section(data-background-image="img/course_overview.png" data-background-opacity=0.5)
           
           h1 Course Overview
